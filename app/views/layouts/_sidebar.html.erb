@@ -1,0 +1,22 @@
+<div class="main-sidebar sidebar-style-2" style="overflow: hidden; outline: currentcolor none medium;" tabindex="1">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <a href="index.html">Finanças Pessoais</a>
+    </div>
+    <div class="sidebar-brand sidebar-brand-sm">
+      <a href="index.html">FP</a>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-header">Finanças</li>
+      <li><a class="nav-link" href="blank.html"><i class="fas fa-th"></i> <span>Gráficos</span></a></li>
+      <li>
+        <%= link_to accounts_path, :class => "nav-link" do %>
+          <i class="fas fa-pencil-ruler"></i> <span>Contas</span></a>          
+        <% end %>
+      </li>
+      <li><a class="nav-link" href="blank.html"><i class="fas fa-fire"></i> <span>Lançamentos</span></a></li>
+      <li class="menu-header">Configurações</li>
+      <li><a class="nav-link" href="blank.html"><i class="fas fa-user"></i> <span>Perfil</span></a></li>
+      <li><a class="nav-link" href="blank.html"><i class="fas fa-columns"></i> <span>Categorias</span></a></li>
+  </aside>
+</div>

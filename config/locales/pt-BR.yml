@@ -1,0 +1,26 @@
+pt-BR:
+  activerecord:    
+    models:
+      account:
+        one: "Conta"
+        other: "Contas"
+    # /models    
+    attributes:
+      account:
+        description: "Descrição"
+        balance: "Saldo"
+        active: "Ativo"
+    # /attributes
+  # /activerecord
+  buttons:
+    new: "Incluir"
+    edit: "Alterar"
+    show: "Ver"
+    destroy: "Apagar"
+    back: "Voltar"
+  # /buttons
+  messages:
+    confirm_destroy: "Você tem certeza?"
+    hi: "Olá"
+    input_empty: Por favor preencha
+  # /messages
