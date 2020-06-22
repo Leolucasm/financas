@@ -77,3 +77,5 @@ gem 'jquery-ui-rails'
 gem 'nicescroll-rails'
 gem 'popper_js', '~> 1.14.5'
 gem 'bootstrap-popover-rails'
+
+gem 'simple_form'

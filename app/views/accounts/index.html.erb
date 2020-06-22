@@ -1,5 +1,5 @@
 <div class="section-header">
-  <h1><%= Account.model_name.human(count: @accounts.size)  %></h1>  
+  <h1><%= Account.model_name.human(count: @accounts.size)  %></h1>
   <!-- Breadcrumb -->
   <div class="section-header-breadcrumb">
     <%= @teste %>
@@ -9,9 +9,9 @@
 <div class="section-body">
   <p id="notice"><%= notice %></p>
 
-  <%= link_to t('buttons.new'), accounts_path, class: "btn btn-primary", style: "margin-bottom: 25px;" %>
+  <%= link_to t('buttons.new'), new_account_path, class: 'btn btn-primary', style: "margin-bottom: 25px;", data: { modal: true } %>
 
-  <div class="card">    
+  <div class="card">
     <div class="card-body p-0">
       <div class="table-responsive">
         <table class="table table-striped table-md">
@@ -20,7 +20,7 @@
               <th><%= Account.human_attribute_name :description %></th>
               <th><%= Account.human_attribute_name :balance %></th>
               <th><%= Account.human_attribute_name :active %></th>
-              <th colspan="3">Ações</th>
+              <th colspan="2">Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -28,15 +28,22 @@
               <tr>
                 <td><%= account.description %></td>
                 <td><%= account.balance %></td>
-                <td><%= account.active %></td>
-                <td><%= link_to t('buttons.show'), account %></td>
-                <td><%= link_to t('buttons.edit'), edit_account_path(account) %></td>
-                <td><%= link_to t('buttons.destroy'), account, method: :delete, data: { confirm: t('messages.confirm_destroy')} %></td>
+                <td><%= get_label_active(account.active) %></td>
+                <td style="width:50px;">
+                  <%= link_to edit_account_path(account), data: { modal: true } do %>
+                    <i class="far fa-edit" style="font-size: 16px !important;"></i>
+                  <% end %>
+                </td>
+                <td style="width:50px;">
+                  <%= link_to account, method: :delete, data: { confirm: t('messages.confirm_destroy')} do %>
+                    <i class="far fa-trash-alt" style="font-size: 16px !important;"></i>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>
         </table>
       </div>
-    </div>    
-  </div>  
+    </div>
+  </div>
 </div>

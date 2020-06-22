@@ -1,12 +1,1 @@
-<div class="section-header">
-  <h1>Nova <%= Account.model_name.human  %></h1>  
-  <!-- Breadcrumb -->
-  <div class="section-header-breadcrumb">
-    <%= @teste %>
-  </div>  
-</div>
-
-<div class="col-12 col-md-6 col-lg-6">
-    <%= link_to t('buttons.back'), accounts_path, class: "btn btn-light", style: "margin-bottom: 25px;" %>
-    <%= render 'form', account: @account %>
-</div>
+<%= render 'form', account: @account %>

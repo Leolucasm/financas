@@ -1,47 +1,46 @@
-<div class="card">    
-  <div class="card-body">
+<% content_for :title do %>
+  <%= @title_page %>
+<% end %>
 
-    <%= form_with(model: account, local: true) do |form| %>
-      <% if account.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+<%= simple_form_for(@account, remote: request.xhr?, html: { data: {modal: true}}) do |form| %>
+  <% if account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
 
-          <ul>
-          <% account.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
+      <ul>
+      <% account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-      
-      <div class="form-group">
-        <%= form.label :description %>
-        <%= form.text_field :description, class: "form-control" %>
-      </div>
+      </ul>
+    </div>
+  <% end %>
 
-      <div class="form-group">
-        <%= form.label :balance %>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              R$
-            </div>
-          </div>
-          <%= form.text_field :balance, class: "form-control" %>
-        </div>
-      </div>        
-
-      <div class="form-group">          
-        <label class="custom-switch mt-2">
-          <%= form.check_box :active, name: "custom-switch-checkbox", class: "custom-switch-input" %>            
-          <span class="custom-switch-indicator"></span>
-          <span class="custom-switch-description">Conta Ativa</span>
-        </label>
-      </div>
-
-      <div class="actions">
-        <%= form.submit class: "btn btn-primary" %>
-      </div>
-    <% end %>                  
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control", required: true %>
   </div>
-</div>
+
+  <div class="form-group">
+    <%= form.label :balance %>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          R$
+        </div>
+      </div>
+      <%= form.text_field :balance, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="custom-switch mt-2">
+      <%= form.check_box :active, class: "custom-switch-input" %>
+      <span class="custom-switch-indicator"></span>
+      <span class="custom-switch-description">Conta Ativa</span>
+    </label>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
