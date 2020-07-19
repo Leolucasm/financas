@@ -5,20 +5,13 @@
 ... Description
  
  
-## Technology 
+## Tecnologias
  
-Here are the technologies used in this project.
+Estas são as tecnologias utilizadas no projeto
  
 * Ruby version  2.4.0
 * Rails version 5.2.3
-* ...
- 
- 
-## Services Used
- 
-* Github
-* ...
- 
+  
  
 ## Ruby Gems
 
@@ -44,21 +37,21 @@ Here are the technologies used in this project.
 * gem 'bootstrap-popover-rails'
 * gem 'simple_form'
 
-## Getting started
+## Iniciando
  
-* To install gems:
+* Para instalar as GEMS:
 >    $ bundle install
-* To create the bank and do as migrations:
+* Para criar o banco de dados, realizar as migrações e a inserção dos registros padrões:
 >    $ rake db:create db:migrate db:seed
-* To run the project:
+* Para iniciar a aplicação:
 >    $ rails s
  
-## How to use
+## Como Usar
  
 Here will be the images and descriptions. Principal content.
  
  
-## Features
+## Funcionalidades
  
   - Here will be the features.
  
@@ -72,7 +65,7 @@ Here will be the images and descriptions. Principal content.
       to improve the security and privacy of this project!
  
  
-## Versioning
+## Versionamento
  
 1.0.0.0
  
@@ -82,5 +75,5 @@ Here will be the images and descriptions. Principal content.
 * **LEONARDO MELO**: @Leolucasm (https://github.com/Leolucasm)
  
  
-Please follow github and join us!
-Thanks to visiting me and good coding!
+Siga o perfil do Github e fique à vontade em contribuir com o projeto.
+Obrigado pela visita!
