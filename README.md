@@ -2,7 +2,7 @@
  
 ## Finanças Pessoais
  
-... Description
+Projeto criado para permitir o gerenciamento das finanças pessoais.
  
  
 ## Tecnologias
@@ -11,6 +11,7 @@ Estas são as tecnologias utilizadas no projeto
  
 * Ruby version  2.4.0
 * Rails version 5.2.3
+* AngularJS
   
  
 ## Ruby Gems
@@ -67,12 +68,13 @@ Here will be the images and descriptions. Principal content.
  
 ## Versionamento
  
-1.0.0.0
+1.0.0.0 - Inicialização do projeto
  
  
-## Authors
+## Autores
  
 * **LEONARDO MELO**: @Leolucasm (https://github.com/Leolucasm)
+ 
  
  
 Siga o perfil do Github e fique à vontade em contribuir com o projeto.
