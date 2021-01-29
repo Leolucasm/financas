@@ -28,17 +28,24 @@
       <% else %>
         <section class="section">
           <div class="container mt-5">
-            <div class="row">
+            <div class="row row-login">
               <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                 <div class="login-brand">
                   <%= image_tag "logo.png", alt:"logo", class:"shadow-light", width:"100" %>
                 </div>
+                <% if flash.any? && flash.count > 0 %>
+                  <%= get_alert_error(flash.alert) %>
+                <% end %>
                 <%= yield %>
               </div>
             </div>
           </div>
         </section>
+        <footer class="simple-footer">
+          Copyright © Leonardo Melo 2020
+        </footer>
       <% end %>
     </div>
+    <%= render "layouts/notices" %>
   </body>
 </html>

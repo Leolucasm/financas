@@ -30,6 +30,7 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.json
   def create
+    formatValuesToSave(*account_params.values_at(:balance))
     @account = Account.new(account_params)
 
     if @account.save
@@ -42,6 +43,7 @@ class AccountsController < ApplicationController
   # PATCH/PUT /accounts/1
   # PATCH/PUT /accounts/1.json
   def update
+    formatValuesToSave(*account_params.values_at(:balance))
     if @account.update(account_params)
       respond_modal_with @account, location: accounts_path
     else
@@ -54,7 +56,7 @@ class AccountsController < ApplicationController
   def destroy
     @account.destroy
     respond_to do |format|
-      format.html { redirect_to accounts_url, notice: 'Account was successfully destroyed.' }
+      format.html { redirect_to accounts_url, notice: t('messages.destroy_success') }
       format.json { head :no_content }
     end
   end

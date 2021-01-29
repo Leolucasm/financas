@@ -15,6 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery/jquery.inputmask.bundle
 //= require bootstrap/bootstrap-rails-tooltip
 //= require bootstrap/bootstrap-rails-popover
 //= require jquery.nicescroll
@@ -23,5 +24,6 @@
 //= require stisla
 //= require scripts
 //= require custom
+//= require notifyjs
 //= require turbolinks
 //= require_tree .

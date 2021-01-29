@@ -10,6 +10,10 @@ pt-BR:
         description: "Descrição"
         balance: "Saldo"
         active: "Ativo"
+      user:
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirme sua Senha"
     # /attributes
   # /activerecord
   buttons:
@@ -23,6 +27,7 @@ pt-BR:
     confirm_destroy: "Você tem certeza?"
     input_empty: "Por favor preencha"
     hi: "Olá"
+    destroy_success: "Exclusão realizada com sucesso"
   # /messages
   helpers:
     create: "Cadastro"

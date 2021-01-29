@@ -7,7 +7,6 @@
 </div>
 
 <div class="section-body">
-  <p id="notice"><%= notice %></p>
 
   <%= link_to t('buttons.new'), new_account_path, class: 'btn btn-primary', style: "margin-bottom: 25px;", data: { modal: true } %>
 
@@ -27,7 +26,7 @@
             <% @accounts.each do |account| %>
               <tr>
                 <td><%= account.description %></td>
-                <td><%= account.balance %></td>
+                <td><%= currencyf(account.balance) %></td>
                 <td><%= get_label_active(account.active) %></td>
                 <td style="width:50px;">
                   <%= link_to edit_account_path(account), data: { modal: true } do %>
