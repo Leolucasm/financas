@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   require './lib/modal_responder'
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action  :set_tenant
 
   def respond_modal_with(*args, &blk)
     options = args.extract_options!
@@ -23,5 +24,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
        devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password)}
        devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password)}
+  end
+
+  def set_tenant
+    ActsAsTenant.current_tenant = current_user
   end
 end

@@ -65,8 +65,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Centralization of locale data collection for Ruby on Rails
 gem 'rails-i18n', '~> 5.1'
 
-# Authentication
+# Authentication and Multitenancy
 gem 'devise'
+gem 'acts_as_tenant'
 
 # Bootstrap template
 gem 'bootstrap', '~> 4.0.0.alpha3'
