@@ -1,15 +1,19 @@
 <%# frozen_string_literal: true %>
-<%%= simple_form_for(@<%= singular_table_name %>) do |f| %>
-  <%%= f.error_notification %>
-  <%%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%% content_for :title do %>
+  <%%= @title_page %>
+<%% end %>
+<%%= simple_form_for(@<%= singular_table_name %>, remote: request.xhr?, html: { data: {modal: true}}) do |f| %>
+  <%% if f.object.errors.any? %>
+    <%%= get_alert_error(f.object.errors.full_messages) %>
+  <%% end %>
 
-  <div class="form-inputs">
+  <div class="form-group">
   <%- attributes.each do |attribute| -%>
-    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>, class: "form-control" %>
   <%- end -%>
   </div>
 
-  <div class="form-actions">
-    <%%= f.button :submit %>
+  <div class="actions">
+    <%%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <%% end %>
