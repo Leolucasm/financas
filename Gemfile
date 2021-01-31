@@ -70,7 +70,7 @@ gem 'devise'
 gem 'acts_as_tenant'
 
 # Bootstrap template
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'stisla-rails'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'jquery'
