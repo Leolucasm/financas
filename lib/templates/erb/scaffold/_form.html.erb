@@ -9,7 +9,9 @@
 
   <div class="form-group">
   <%- attributes.each do |attribute| -%>
-    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>, class: "form-control" %>
+    <% if attribute.name != "user_id" %>
+      <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>, class: "form-control" %>
+    <% end %>
   <%- end -%>
   </div>
 
